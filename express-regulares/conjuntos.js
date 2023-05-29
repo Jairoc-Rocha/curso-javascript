@@ -1,0 +1,1 @@
+console.log(/[0-9]/.test("Existe o número 55 aqui?"))
