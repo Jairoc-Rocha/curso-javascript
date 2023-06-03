@@ -26,42 +26,64 @@
 
 // Eventos do mouse
 
-let btn1 = document.querySelector('#btn1')
-let btn2 = document.querySelector('#btn2')
-let btn3 = document.querySelector('#btn3')
+// let btn1 = document.querySelector('#btn1')
+// let btn2 = document.querySelector('#btn2')
+// let btn3 = document.querySelector('#btn3')
 
-btn1.addEventListener('mousedown', () => {
-    console.log("Evento mousedown")
-})
-
-btn2.addEventListener('mouseup', () => {
-    console.log("Evento mouseup")
-})
-
-btn3.addEventListener('dblclick', () => {
-    console.log("Evento dblclick")
-})
-
-
-// window.addEventListener('mousemove', (e) => {
-//     console.log(e.x)
-//     console.log(e.y)
+// btn1.addEventListener('mousedown', () => {
+//     console.log("Evento mousedown")
 // })
-window.addEventListener('scroll', (e) => {
-    if (window.pageYOffset > 1000) {
-        console.log("Chegou na posição")
-    }
-})
 
-input1 = document.querySelector('#input1')
-input1.addEventListener('focus', () => {
-    console.log("Entrou no input1")
-})
+// btn2.addEventListener('mouseup', () => {
+//     console.log("Evento mouseup")
+// })
 
-input1.addEventListener('blur', () => {
-    console.log("Saiu no input1")
-})
+// btn3.addEventListener('dblclick', () => {
+//     console.log("Evento dblclick")
+// })
 
-window.addEventListener('load', () => {
-    console.log("Carregou a página......")
-})
+
+// // window.addEventListener('mousemove', (e) => {
+// //     console.log(e.x)
+// //     console.log(e.y)
+// // })
+// window.addEventListener('scroll', (e) => {
+//     if (window.pageYOffset > 1000) {
+//         console.log("Chegou na posição")
+//     }
+// })
+
+// input1 = document.querySelector('#input1')
+// input1.addEventListener('focus', () => {
+//     console.log("Entrou no input1")
+// })
+
+// input1.addEventListener('blur', () => {
+//     console.log("Saiu no input1")
+// })
+
+// window.addEventListener('load', () => {
+//     console.log("Carregou a página......")
+// })
+
+window.addEventListener('load', start)
+
+function start() {
+    
+    let input = document.querySelector('#nameInput')
+    input.addEventListener('keyup', countName)
+
+    let form = document.querySelector('form')
+    form.addEventListener('submit', preventSubmit)
+}
+
+function countName(event) {
+    let count = event.target.value
+
+    let span = document.querySelector('#nameLenght')
+    span.textContent = count.length
+}
+
+function preventSubmit(event) {
+    event.preventDefault()
+}
