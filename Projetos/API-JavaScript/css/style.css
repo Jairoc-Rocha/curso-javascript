@@ -16,7 +16,6 @@ img {
 
 .country {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -33,3 +32,4 @@ font-weight: bold;
     border-radius: 10px;
     margin-right: 10px;
 }
+
